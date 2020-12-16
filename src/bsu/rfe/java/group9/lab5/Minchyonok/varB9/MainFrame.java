@@ -30,7 +30,7 @@ public class MainFrame extends JFrame {
         super("Îáðàáîòêà ñîáûòèé îò ìûøè");
         this.setSize(700, 500);
         Toolkit kit = Toolkit.getDefaultToolkit();
-        this.setLocation((kit.getScreenSize().width - 700) / 2, (kit.getScreenSize().height - 500) / 2);
+        this.setLocation((kit.getScreenSize().width - WIDTH) / 2, (kit.getScreenSize().height - HEIGHT) / 2);
         this.setExtendedState(6);
         JMenuBar menuBar = new JMenuBar();
         this.setJMenuBar(menuBar);
