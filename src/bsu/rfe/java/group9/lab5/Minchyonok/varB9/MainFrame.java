@@ -27,16 +27,16 @@ public class MainFrame extends JFrame {
 
     public MainFrame() {
 
-        super("Îáðàáîòêà ñîáûòèé îò ìûøè");
+        super("Обработка событий от мыши");
         this.setSize(700, 500);
         Toolkit kit = Toolkit.getDefaultToolkit();
         this.setLocation((kit.getScreenSize().width - WIDTH) / 2, (kit.getScreenSize().height - HEIGHT) / 2);
         this.setExtendedState(6);
         JMenuBar menuBar = new JMenuBar();
         this.setJMenuBar(menuBar);
-        JMenu fileMenu = new JMenu("Ôàéë");
+        JMenu fileMenu = new JMenu("Файл");
         menuBar.add(fileMenu);
-        Action openGraphicsAction = new AbstractAction("Îòêðûòü ôàéë ñ ãðàôèêîì") {
+        Action openGraphicsAction = new AbstractAction("Открыть файл с графиком") {
             public void actionPerformed(ActionEvent event) {
                 if (MainFrame.this.fileChooser == null) {
                     MainFrame.this.fileChooser = new JFileChooser();
@@ -48,7 +48,7 @@ public class MainFrame extends JFrame {
             }
         };
         fileMenu.add(openGraphicsAction);
-        Action resetGraphicsAction = new AbstractAction("Îòìåíèòü âñå èçìåíåíèÿ") {
+        Action resetGraphicsAction = new AbstractAction("Отменить все изменения") {
             public void actionPerformed(ActionEvent event) {
                 MainFrame.this.display.reset();
             }
@@ -76,9 +76,9 @@ public class MainFrame extends JFrame {
             }
 
         } catch (FileNotFoundException var6) {
-            JOptionPane.showMessageDialog(this, "Óêàçàííûé ôàéë íå íàéäåí", "Îøèáêà çàãðóçêè äàííûõ", 2);
+            JOptionPane.showMessageDialog(this, "Указанный файл не найден", "Ошибка загрузки данных", 2);
         } catch (IOException var7) {
-            JOptionPane.showMessageDialog(this, "Îøèáêà ÷òåíèÿ êîîðäèíàò òî÷åê èç ôàéëà", "Îøèáêà çàãðóçêè äàííûõ", 2);
+            JOptionPane.showMessageDialog(this, "Ошибка чтения координат точек из файла", "Ошибка загрузки данных", 2);
         }
     }
 
